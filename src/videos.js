@@ -1,5 +1,3 @@
-import preview from './img/preview.png'
-
 export const VideosBack = [
 {
     "url": "./video/VfE_html5.mp4",
@@ -11,7 +9,7 @@ export const VideosBack = [
     "genre": "Advanture",
     "year": "2017",
     "time": "0:01:00",
-    "preview":  {preview}
+    "preview": "./img/preview.png"
 },
 {
     "url": "./video/VfE_html5.mp4",

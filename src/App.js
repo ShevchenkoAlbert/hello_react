@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Content videos={VideosBack} reklama={AdvertisingBack} />
+        <Content />
       </div>
     );
   }
