@@ -123,15 +123,15 @@ export const VideosBack = [
 
 export const AdvertisingBack = [
 {
-    "url": "./img/reklama.jpeg",
+    "url": "http://newwavestars.eu/wp-content/uploads/2017/06/advertising-newwavestars.jpg",
     "id": 1
 },
 {
-    "url": "./img/reklama2.jpeg",
+    "url": "http://www.swlearning.com/web_resources/images/advertising.jpg",
     "id": 2
 },
 {
-    "url": "./img/reklama3.jpeg",
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkwCNQWB77qNW9k1iClG6YEm82WTZXGIijdwvvRoevLdjRVwUTXw",
     "id": 3
 }
 ]
