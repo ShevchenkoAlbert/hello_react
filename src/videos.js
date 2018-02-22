@@ -1,6 +1,7 @@
 export const VideosBack = [
 {
-    "url": "./video/VfE_html5.mp4",
+    "id": 1,
+    "url": "https://www.youtube.com/embed/lY2yjAdbvdQ?list=RDMM34Na4j8AVgA",
     "title": "Test video 1",
     "rate": 4,
     "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro, eos facere rerum aperiam officia quae vero velit delectus quasi.",
@@ -12,7 +13,8 @@ export const VideosBack = [
     "preview": "./img/preview.png"
 },
 {
-    "url": "./video/VfE_html5.mp4",
+    "id": 2,
+    "url": "https://www.youtube.com/watch?v=S-sJp1FfG7Q&list=RDMM34Na4j8AVgA&index=27",
     "title": "Test video 2",
     "rate": 5,
     "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro, eos facere rerum aperiam officia quae vero velit delectus quasi.",
@@ -24,6 +26,7 @@ export const VideosBack = [
     "preview": "./img/preview.png"
 },
 {
+    "id": 3,
     "url": "./video/VfE_html5.mp4",
     "title": "Test video 3",
     "rate": 3,
@@ -36,6 +39,7 @@ export const VideosBack = [
     "preview": "./img/preview.png"
 },
 {
+    "id": 4,
     "url": "./video/VfE_html5.mp4",
     "title": "Test video 4",
     "rate": 4,
@@ -48,6 +52,7 @@ export const VideosBack = [
     "preview": "./img/preview.png"
 },
 {
+    "id": 5,
     "url": "./video/VfE_html5.mp4",
     "title": "Test video 5",
     "rate": 5,
@@ -60,6 +65,7 @@ export const VideosBack = [
     "preview": "./img/preview.png"
 },
 {
+    "id": 6,
     "url": "./video/VfE_html5.mp4",
     "title": "Test video 6",
     "rate": 3,
@@ -72,6 +78,7 @@ export const VideosBack = [
     "preview": "./img/preview.png"
 },
 {
+    "id": 7,
     "url": "./video/VfE_html5.mp4",
     "title": "Test video 7",
     "rate": 4,
@@ -84,6 +91,7 @@ export const VideosBack = [
     "preview": "./img/preview.png"
 },
 {
+    "id": 8,
     "url": "./video/VfE_html5.mp4",
     "title": "Test video 8",
     "rate": 5,
@@ -96,6 +104,7 @@ export const VideosBack = [
     "preview": "./img/preview.png"
 },
 {
+    "id": 9,
     "url": "./video/VfE_html5.mp4",
     "title": "Test video 9",
     "rate": 4,
@@ -108,6 +117,7 @@ export const VideosBack = [
     "preview": "./img/preview.png"
 },
 {
+    "id": 10,
     "url": "./video/VfE_html5.mp4",
     "title": "Test video 10",
     "rate": 4,
@@ -123,15 +133,15 @@ export const VideosBack = [
 
 export const AdvertisingBack = [
 {
-    "url": "./img/reklama.jpeg",
-    "id": 1
+    "url": "http://newwavestars.eu/wp-content/uploads/2017/06/advertising-newwavestars.jpg",
+    "id": 1.1
 },
 {
-    "url": "./img/reklama2.jpeg",
-    "id": 2
+    "url": "http://www.swlearning.com/web_resources/images/advertising.jpg",
+    "id": 2.1
 },
 {
-    "url": "./img/reklama3.jpeg",
-    "id": 3
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkwCNQWB77qNW9k1iClG6YEm82WTZXGIijdwvvRoevLdjRVwUTXw",
+    "id": 3.1
 }
 ]

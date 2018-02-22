@@ -112,6 +112,11 @@ header img {
   margin-bottom: 15px;
   position: relative;
 }
+
+.block_video a {
+  text-decoration: none;
+  color: #000;
+}
 .block_video p {
   margin-bottom: 5px;
 

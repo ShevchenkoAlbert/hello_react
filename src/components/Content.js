@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import preview from './../img/preview.png';
 import spiner from './../img/jstips-animation.gif'
 import {VideosBack} from './../videos';
@@ -19,11 +20,13 @@ class Content extends Component {
 
   renderVideoBlock = (item,index) => {
 		return (
-			<div className="block_video" key={index}> 
-				<p> {item.title} </p>
-				<img src={preview} alt="video_block"/> 
-				<div className={item.access === 'free' ? 'access_block accessColorFree' : 'access_block accessColorPay' }>{item.access} </div>
-			</div>
+			<div className="block_video" key={item.id}> 
+        <Link to={`/video/${item.id}`}>
+				  <p> {item.title} </p>
+          <img src={preview} alt="video_block"/> 
+				  <div className={item.access === 'free' ? 'access_block accessColorFree' : 'access_block accessColorPay' }>{item.access} </div>
+			  </Link>
+      </div>
 		)
 	}
   
