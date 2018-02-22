@@ -14,7 +14,7 @@ export const VideosBack = [
 },
 {
     "id": 2,
-    "url": "https://www.youtube.com/watch?v=S-sJp1FfG7Q&list=RDMM34Na4j8AVgA&index=27",
+    "url": "https://www.youtube.com/embed/lY2yjAdbvdQ?list=RDMM34Na4j8AVgA",
     "title": "Test video 2",
     "rate": 5,
     "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro, eos facere rerum aperiam officia quae vero velit delectus quasi.",
@@ -27,7 +27,7 @@ export const VideosBack = [
 },
 {
     "id": 3,
-    "url": "./video/VfE_html5.mp4",
+    "url": "https://www.youtube.com/embed/lY2yjAdbvdQ?list=RDMM34Na4j8AVgA",
     "title": "Test video 3",
     "rate": 3,
     "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro, eos facere rerum aperiam officia quae vero velit delectus quasi.",
@@ -40,7 +40,7 @@ export const VideosBack = [
 },
 {
     "id": 4,
-    "url": "./video/VfE_html5.mp4",
+    "url": "https://www.youtube.com/embed/lY2yjAdbvdQ?list=RDMM34Na4j8AVgA",
     "title": "Test video 4",
     "rate": 4,
     "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro, eos facere rerum aperiam officia quae vero velit delectus quasi.",
@@ -53,7 +53,7 @@ export const VideosBack = [
 },
 {
     "id": 5,
-    "url": "./video/VfE_html5.mp4",
+    "url": "https://www.youtube.com/embed/lY2yjAdbvdQ?list=RDMM34Na4j8AVgA",
     "title": "Test video 5",
     "rate": 5,
     "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro, eos facere rerum aperiam officia quae vero velit delectus quasi.",
@@ -66,7 +66,7 @@ export const VideosBack = [
 },
 {
     "id": 6,
-    "url": "./video/VfE_html5.mp4",
+    "url": "https://www.youtube.com/embed/lY2yjAdbvdQ?list=RDMM34Na4j8AVgA",
     "title": "Test video 6",
     "rate": 3,
     "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro, eos facere rerum aperiam officia quae vero velit delectus quasi.",
@@ -79,7 +79,7 @@ export const VideosBack = [
 },
 {
     "id": 7,
-    "url": "./video/VfE_html5.mp4",
+    "url": "https://www.youtube.com/embed/lY2yjAdbvdQ?list=RDMM34Na4j8AVgA",
     "title": "Test video 7",
     "rate": 4,
     "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro, eos facere rerum aperiam officia quae vero velit delectus quasi.",
@@ -92,7 +92,7 @@ export const VideosBack = [
 },
 {
     "id": 8,
-    "url": "./video/VfE_html5.mp4",
+    "url": "https://www.youtube.com/embed/lY2yjAdbvdQ?list=RDMM34Na4j8AVgA",
     "title": "Test video 8",
     "rate": 5,
     "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro, eos facere rerum aperiam officia quae vero velit delectus quasi.",
@@ -105,7 +105,7 @@ export const VideosBack = [
 },
 {
     "id": 9,
-    "url": "./video/VfE_html5.mp4",
+    "url": "https://www.youtube.com/embed/lY2yjAdbvdQ?list=RDMM34Na4j8AVgA",
     "title": "Test video 9",
     "rate": 4,
     "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro, eos facere rerum aperiam officia quae vero velit delectus quasi.",
@@ -118,7 +118,7 @@ export const VideosBack = [
 },
 {
     "id": 10,
-    "url": "./video/VfE_html5.mp4",
+    "url": "https://www.youtube.com/embed/lY2yjAdbvdQ?list=RDMM34Na4j8AVgA",
     "title": "Test video 10",
     "rate": 4,
     "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro, eos facere rerum aperiam officia quae vero velit delectus quasi.",

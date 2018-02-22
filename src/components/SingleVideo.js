@@ -32,7 +32,7 @@ class SingleVideo extends Component {
   		<div>
        	<div className="row">
        		<div className="videoFrame" id="video">
-       				<iframe id="ytplayer" type="text/html" src={video.src} frameBorder="0" allowFullScreen />
+       				<iframe id="ytplayer" type="text/html" title={index} src={video.url} frameBorder="0" allowFullScreen />
        		</div>
 					<div className="aside" id="aside">
 						<p>{video.title}</p>
