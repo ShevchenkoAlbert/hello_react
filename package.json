@@ -6,15 +6,20 @@
     "history": "^4.7.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
     "react-route": "^1.0.3",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
-    "react-youtube-video": "^1.0.3"
+    "react-youtube-video": "^1.0.3",
+    "redux": "^3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-hot-loader": "^4.0.0-rc.0"
   }
 }

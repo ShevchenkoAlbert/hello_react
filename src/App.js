@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import Content from './components/Content';
-import SingleVideo from './components/SingleVideo'
+import SingleVideo from './components/SingleVideo';
 import { Route, Switch } from 'react-router-dom';
+import  { connect } from  'react-redux';
 import './App.css';
 
 class App extends Component {
@@ -20,4 +21,12 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+ return {
+  user: state.user,
+  video: state.video,
+  advertising: state.video
+ }
+}
+export default connect(mapStateToProps)(App)
+
