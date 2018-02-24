@@ -4,7 +4,7 @@ import preview from './../img/preview.png';
 import spiner from './../img/jstips-animation.gif'
 import {VideosBack} from './../videos';
 import {AdvertisingBack} from './../videos'
-import {history} from './../index'
+import {history} from './../store/configureStore'
 
 const FREE = 'free';
 const PAY = 'pay';
