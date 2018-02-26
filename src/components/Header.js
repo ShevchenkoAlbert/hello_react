@@ -4,61 +4,23 @@ import logo from '../img/logo.png'
 
 
 class Header extends Component {
-	state = {
-		showButton: false,
-		showError: false,
-		login: 'admin',
-		password: 'admin',
-		userLogin: '',
-		userPassword: ''
-	}
-
- setAccess = () => {
-		localStorage.setItem('isLogin', true) 
-	}
-
-
-	singIn = () => {
-		const {login, password, userLogin, userPassword} = this.state;
-		if (login === userLogin.trim() && password === userPassword.trim()) {
-			this.setState({showButton: true}) 
-			this.setAccess()
-		}  
-		else  {
-			this.setState({showError: true})
-			alert('Uncorrect login or password. Try again')
-		}
-			
-	}
-
-	logOut = () => {
-		this.setState({
-		showButton: false,
-		showError: false,
-		userLogin: '',
-		userPassword: ''
-		})
-		localStorage.setItem('isLogin', false)
-
-	}
-
 	render() {
-		console.log('login', this.props)
+		console.log('user', this.props.user)
 		return (
 			<header>
 				<div className="logo_div">
 					<img src={logo} alt="logo"/>
 						<span id="loggedUser"> 
 							{
-								(this.state.showButton === true) && (this.state.userLogin !== '') ? `Hello, ${this.state.userLogin}` : 'Hello, guest' 
+								(this.props.user.isLogin === true) ? `Hello, ${this.props.user.name}` : 'Hello, guest' 
 							}
 						</span>
 				</div>
 				{
-					this.state.showButton ? 
+					this.props.user.isLogin ? 
 					(
 						<div className="inputs" id="inputs">
-							<button id="logOut" onClick={this.logOut} > Log Out</button>
+							<button id="logOut" onClick={this.props.logOut} > Log Out</button>
 						</div>      
 					) : ( 
 						<div className="inputs" id="inputs">

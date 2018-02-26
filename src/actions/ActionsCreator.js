@@ -1,4 +1,4 @@
-import { CHECK_LOGIN, SET_USER_LOGIN, SET_USER_PASSWORD } from './../constants/constants'
+import { CHECK_LOGIN, SET_USER_LOGIN, SET_USER_PASSWORD, LOG_OUT } from './../constants/constants'
 
 export const checkLogin = (payload) => {
 	return {
@@ -21,4 +21,10 @@ export const setUserPassword = (payload) => {
 	}
 }
 
+export const logOut = (payload) => {
+	return {
+		type: LOG_OUT,
+		payload
+	}
+}
 

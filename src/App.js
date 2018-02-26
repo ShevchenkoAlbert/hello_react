@@ -16,7 +16,8 @@ class App extends Component {
       	<Header checkLogin={this.props.checkLogin} 
           setUserLogin={this.props.setUserLogin}
           setUserPassword={this.props.setUserPassword}
-          isLogin={this.props.isLogin} />
+          user={this.props.user}
+          logOut={this.props.logOut} />
       	<Switch>
       		<Route exact path='/' component={Content}/>
       		<Route path='/video/:index'   component= {SingleVideo} />
@@ -29,7 +30,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    isLogin: state.user.isLogin,
+    user: state.user,
     video: state.video,
     advertising: state.video
   }
