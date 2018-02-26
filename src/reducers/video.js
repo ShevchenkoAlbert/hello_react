@@ -1,9 +1,18 @@
+import {GET_VIDEO} from '../constants/constants'
+
 const initialState = {
-	videos: null,
+	video: [],
 	error: null,
 	isLoading: false
 }
 
-export default function video (state = initialState){
-	return state	
+export default (state = initialState, action) => {
+	switch (action.type) {
+		case GET_VIDEO: {
+			return {...state, video: action.payload}
+		}
+
+	default:
+		return state	
+	}
 } 

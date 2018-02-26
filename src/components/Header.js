@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import logo from '../img/logo.png'
-	
-
+import logo from '../img/logo.png';
+import {checkLogin, setUserLogin, setUserPassword, logOut} from './../actions/UserActions';
+import  { connect } from  'react-redux';
 
 class Header extends Component {
 	render() {
-		console.log('user', this.props.user)
+	console.log(this.props)
+
 		return (
 			<header>
 				<div className="logo_div">
@@ -24,9 +25,9 @@ class Header extends Component {
 						</div>      
 					) : ( 
 						<div className="inputs" id="inputs">
-							<input type="text" className="header_input" id="login" placeholder="login" onChange={ (event) => this.props.setUserLogin(event.target.value) }/>
-							<input type="password" className="header_input" id="password" placeholder="password" onChange={ (event) => this.props.setUserPassword(event.target.value) } />
-							<button id="singIn" className="header_input" onClick={this.props.checkLogin}> Sing in </button>
+							<input type="text" className="header_input" id="login" placeholder="login" onChange={ this.props.setUserLogin }/>
+							<input type="password" className="header_input" id="password" placeholder="password" onChange={ this.props.setUserPassword } />
+							<button id="singIn" className="header_input" onClick={ this.props.checkLogin }> Sing in </button>
 						</div> 
 					)
 				}
@@ -35,4 +36,20 @@ class Header extends Component {
 	}
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+
+  return {
+    user: state.user,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		checkLogin: () => dispatch(checkLogin()),
+		setUserLogin: (e) => dispatch(setUserLogin(e.target.value)),
+		setUserPassword: (e) => dispatch(setUserPassword(e.target.value)),
+		logOut: () => dispatch(logOut())
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

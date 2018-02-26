@@ -9,8 +9,10 @@ export const history = createBrowserHistory();
 
 export const store = createStore(
   	rootReducer, 
+
     applyMiddleware(
       logger,
       routerMiddleware(history)
-      )
+      ),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   	)

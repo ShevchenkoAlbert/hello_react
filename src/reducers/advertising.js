@@ -1,8 +1,19 @@
+import {GET_ADVERTISING} from '../constants/constants'
+
+
 const initialState = {
-	advertising: null,
+	advertising: [],
 	error: null,
 	isLoading: false
 }
 
-export default  function advertising (state = initialState) {
-	return state}
+export default (state = initialState, action) => {
+	switch (action.type) {
+		case GET_ADVERTISING: {
+			return {...state, advertising: action.payload}
+		}
+
+	default:
+		return state	
+	}
+}
