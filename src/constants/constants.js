@@ -5,3 +5,8 @@ export const LOG_OUT = 'LOG_OUT'
 
 export const GET_VIDEO = 'GET_VIDEO'
 export const GET_ADVERTISING = 'GET_ADVERTISING'
+export const FILTER_CONTENT = 'FILTER_CONTENT'
+export const SORTED_CONTENT = 'SORTED_CONTENT'
+export const FREE = 'free';
+export const PAY = 'pay';
+export const ASYNC_VIDEO_SUCCESS = 'ASYNC_VIDEO_SUCCESS'

@@ -1,4 +1,4 @@
-import {GET_VIDEO} from '../constants/constants'
+import { GET_VIDEO, ASYNC_VIDEO_SUCCESS } from '../constants/constants'
 
 const initialState = {
 	video: [],
@@ -11,7 +11,9 @@ export default (state = initialState, action) => {
 		case GET_VIDEO: {
 			return {...state, video: action.payload}
 		}
-
+		case ASYNC_VIDEO_SUCCESS: {
+			return {...state, video: action.payload}
+		}
 	default:
 		return state	
 	}

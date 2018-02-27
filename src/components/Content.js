@@ -1,28 +1,23 @@
 import React, { Component } from 'react';
 import preview from '../img/preview.png';
 import spiner from '../img/jstips-animation.gif'
-import {VideosBack} from '../videos';
-import {AdvertisingBack} from './../videos'
 import {history} from '../store/configureStore'
 import { connect } from 'react-redux'
-import {getVideoContent, getAdvertisingContent} from '../actions/GetContentActions';
+import { getAsyncVideo, getFilterredContent, getSortedContent } from '../actions/GetContentActions';
+import {FREE, PAY} from '../constants/constants'
 
-const FREE = 'free';
-const PAY = 'pay';
-let sortAccess = FREE;
-let access = FREE;
 
 class Content extends Component {
 
 	state = {
-		showSpiner: false
+		showSpiner: false,
 	}
 
 	checkAccess = (item) => {
 		if(item.access === 'free') {
 			history.push(`/video/${item.id}`)
 		}
-		else if (item.access === 'pay' && localStorage.isLogin === 'true') {
+		else if (item.access === PAY && this.props.user) {
 			history.push(`/video/${item.id}`)
 		}
 		else { alert('Sorry, you must registerred')					
@@ -47,52 +42,15 @@ class Content extends Component {
 			)
 	}
 
-	// getContent = () => {
-	// 	this.setState({showSpiner: true})
-	// 	new Promise((resolve, reject) => {
-	// 		setTimeout(function(){
-	// 			let data = [VideosBack, AdvertisingBack]
-	// 			resolve(data);
-				
-	// 		},1000);
-	// 	}).then((data) =>{
-	// 			let VideosBack = data[0];
-	// 			let AdvertisingBack = data[1];
-	// 			this.setState({videos: VideosBack, advertising: AdvertisingBack, showSpiner: false})}
-	// 	)
-	// }
-
-	getFilterredContent = () => {
-		const filterArray = VideosBack.filter((video) => video.access === access)
-		this.setState({videos: filterArray, advertising: AdvertisingBack})
-		access = access === PAY ? FREE : PAY;
-	}
-
-	sortVideo = (videoA, videoB) => {
-		if (videoA.access === sortAccess) return 1
-		else if (videoB.access === sortAccess) return -1
-		else return 0
-	}
-
-	getSortedContent = () => {
-		const sortArray = VideosBack.map((elem) => elem).sort(this.sortVideo)
-		this.setState({videos: sortArray, advertising: AdvertisingBack})
-		sortAccess = sortAccess === PAY ? FREE : PAY;
-	}
-	receiveAllContent = () => {
-		this.props.getVideoContent()
-		this.props.getAdvertisingContent()
-	}
-
 	render() {
 		let i = 0;
-		
 		return (
+
 			<div className="Content" id="content">
 				<div className="buttons">
-				 <button id="getContent" onClick={ this.receiveAllContent} > Get content</button>
-				 <button id="filterBut" onClick={this.getFilterredContent}>Filter videos</button>
-				 <button id="sortBut" onClick={this.getSortedContent}>Sort videos</button>
+				 <button id="getContent" onClick={ this.props.getAsyncVideo} > Get content</button>
+				 <button id="filterBut" onClick={this.props.getFilterredContent}>Filter videos</button>
+				 <button id="sortBut" onClick={this.props.getSortedContent}>Sort videos</button>
 				</div>
 				{ this.state.showSpiner ? 
 					( 
@@ -103,9 +61,7 @@ class Content extends Component {
 						<div className="videoContainer">
 						 {  
 							this.props.video.map((elem,index) =>  {
-								// debugger
-								let div =[];
-								
+								let div =[];								
 								const videoBlock = this.renderVideoBlock(elem,index)
 								div = [videoBlock]
 								if((index+1)%3 === 0) {
@@ -128,15 +84,17 @@ class Content extends Component {
 const mapStateToProps = (state) => {
 	return {
 		video: state.video.video,
-		advertising: state.advertising.advertising
+		advertising: state.advertising.advertising,
+		user: state.user.isLogin
 	}
 }
 
 const mapDispatchToProps = dispatch => {
 	return {
-		getVideoContent: () => dispatch(getVideoContent()),
-		getAdvertisingContent: () => dispatch(getAdvertisingContent())
-	}
+		getAsyncVideo: () => dispatch(getAsyncVideo()),
+		getFilterredContent: () => dispatch(getFilterredContent()),
+		getSortedContent: () => dispatch(getSortedContent())
+		}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Content)
