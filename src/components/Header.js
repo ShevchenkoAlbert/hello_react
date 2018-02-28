@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import logo from '../img/logo.png';
 import {checkLogin, setUserLogin, setUserPassword, logOut} from './../actions/UserActions';
 import  { connect } from  'react-redux';
+import { Link} from 'react-router-dom'
+
+
 
 class Header extends Component {
 	render() {
@@ -16,6 +19,7 @@ class Header extends Component {
 								(this.props.user.isLogin === true) ? `Hello, ${this.props.user.name}` : 'Hello, guest' 
 							}
 						</span>
+						<Link to='/userProfile'> Edit profile </Link> 
 				</div>
 				{
 					this.props.user.isLogin ? 

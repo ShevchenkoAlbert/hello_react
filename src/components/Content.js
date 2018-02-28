@@ -40,10 +40,7 @@ class Content extends Component {
 
 	render() {
 		let i = 0;
-	console.log('props', this.props )
-
 		return (
-
 			<div className="Content" id="content">
 				<div className="buttons">
 				 	<button id="getContent" onClick={ this.props.superAsyncData} > Get content</button>
