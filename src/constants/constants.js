@@ -10,3 +10,4 @@ export const SORTED_CONTENT = 'SORTED_CONTENT'
 export const FREE = 'free';
 export const PAY = 'pay';
 export const ASYNC_VIDEO_SUCCESS = 'ASYNC_VIDEO_SUCCESS'
+export const SHOW_LOADER ='SHOW_LOADER'

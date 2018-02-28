@@ -3,15 +3,11 @@ import preview from '../img/preview.png';
 import spiner from '../img/jstips-animation.gif'
 import {history} from '../store/configureStore'
 import { connect } from 'react-redux'
-import { getAsyncVideo, getFilterredContent, getSortedContent } from '../actions/GetContentActions';
+import { getAsyncVideo, getFilterredContent, getSortedContent, superAsyncData, showLoader } from '../actions/GetContentActions';
 import {FREE, PAY} from '../constants/constants'
 
 
 class Content extends Component {
-
-	state = {
-		showSpiner: false,
-	}
 
 	checkAccess = (item) => {
 		if(item.access === 'free') {
@@ -44,39 +40,41 @@ class Content extends Component {
 
 	render() {
 		let i = 0;
+	console.log('props', this.props )
+
 		return (
 
 			<div className="Content" id="content">
 				<div className="buttons">
-				 <button id="getContent" onClick={ this.props.getAsyncVideo} > Get content</button>
-				 <button id="filterBut" onClick={this.props.getFilterredContent}>Filter videos</button>
-				 <button id="sortBut" onClick={this.props.getSortedContent}>Sort videos</button>
+				 	<button id="getContent" onClick={ this.props.superAsyncData} > Get content</button>
+				 	<button id="filterBut" onClick={this.props.getFilterredContent}>Filter videos</button>
+				 	<button id="sortBut" onClick={this.props.getSortedContent}>Sort videos</button>
 				</div>
-				{ this.state.showSpiner ? 
+				{ this.props.loader ?
 					( 
 						<div id="spiner" className="spiner">
 							<img src={spiner} alt='spiner' />
 						</div>
-					) : (
+					) :	(
 						<div className="videoContainer">
 						 {  
 							this.props.video.map((elem,index) =>  {
 								let div =[];								
 								const videoBlock = this.renderVideoBlock(elem,index)
 								div = [videoBlock]
-								if((index+1)%3 === 0) {
+								if((index+1)%3 === 0 && this.props.advertising.length) {
 									const reklamaBlock = this.renderReklamaBlock(this.props.advertising[i])
 									div.push(reklamaBlock)
 									i++
 								}
-							return div
-							})
+									return div
+								})
 							}
 						</div>
-					)
-				}
+						)
+					}
 				
-			</div>
+				</div>
 		);		
 	}
 }
@@ -85,15 +83,18 @@ const mapStateToProps = (state) => {
 	return {
 		video: state.video.video,
 		advertising: state.advertising.advertising,
-		user: state.user.isLogin
+		user: state.user.isLogin,
+		loader: state.loader.loader
 	}
 }
 
 const mapDispatchToProps = dispatch => {
 	return {
+		showLoader: () => dispatch(showLoader()),
 		getAsyncVideo: () => dispatch(getAsyncVideo()),
 		getFilterredContent: () => dispatch(getFilterredContent()),
-		getSortedContent: () => dispatch(getSortedContent())
+		getSortedContent: () => dispatch(getSortedContent()),
+		superAsyncData: () => dispatch(superAsyncData())
 		}
 }
 

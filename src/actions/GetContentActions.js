@@ -1,4 +1,4 @@
-import {GET_VIDEO, GET_ADVERTISING, FREE, PAY } from './../constants/constants'
+import {GET_VIDEO, GET_ADVERTISING, FREE, PAY, SHOW_LOADER } from './../constants/constants'
 import {VideosBack, AdvertisingBack} from '../videos'
 
 let access = FREE;
@@ -66,3 +66,33 @@ export const getSortedContent = () => dispatch => {
 		dispatch(getVideoContent(data[0]));
 	})
 }
+
+export const superAsyncData = () => dispatch => {
+
+	dispatch(showLoader(true))
+
+	new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve(VideosBack)
+		},1000)
+	})
+	.then((VideosBack) => {
+		dispatch(getVideoContent(VideosBack))
+		return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve(AdvertisingBack)
+				}, 1000)
+			})
+	})
+	.then((AdvertisingBack) => {
+		dispatch(getAdvertisingContent(AdvertisingBack))
+		dispatch(showLoader(false))
+
+	})
+
+}
+
+export const showLoader = (payload) => ({
+	type: SHOW_LOADER,
+	payload
+})

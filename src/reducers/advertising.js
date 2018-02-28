@@ -10,7 +10,7 @@ const initialState = {
 export default (state = initialState, action) => {
 	switch (action.type) {
 		case GET_ADVERTISING: {
-			return {...state, advertising: action.payload}
+			return {...state, advertising: action.payload, isLoading: true}
 		}
 
 	default:
